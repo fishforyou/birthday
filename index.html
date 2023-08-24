@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ron's 33rd bday</title>
+    <script type="text/javascript" src="https://livejs.com/live.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        max-width: 500px;
+        margin: 5rem auto;
+      }
+      section {
+        margin-bottom: 40px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      h2,
+      h1 {
+        margin: 0 0 10px 0;
+      }
+      h1 {
+        text-align: center;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      table {
+        width: 100%;
+      }
+      img {
+        max-width: 300px;
+        margin: auto auto;
+        display: block;
+      }
+      #comments {
+        width: 100%;
+      }
+      #date {
+        font-weight: bold;
+        margin-bottom: 0;
+      }
+      #time {
+        margin: 0;
+        margin-top: 5px;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Birthday Info Section -->
+    <section id="bday-info">
+      <h1>Ron's 33rd bday</h1>
+      <img src="photo.png" alt="A picture of Ron" />
+      <br />
+      <p id="date">Thu, Jun 6 – Sun, Jun 9</p>
+      <p id="time">5pm CET</p>
+      <p id="time">📍 Italy</p>
+      <br />
+      <p>Ciaooo!</p>
+      <p>
+        I am turning 33 and want to see all the people I love in one place. Expect a villa hang somewhere in Italy,
+        trying to emulate the <i>Call Me by Your Name</i> scenery, but without parents. I may share a peach with AJ 🍑
+      </p>
+      <p>
+        Accomodation costs are covered, for the rest we can setup a Splitwise. Please DM me about any allergies or
+        dietary restrictions.
+      </p>
+      <p style="margin-bottom: 0">Please <b>RSVP by end of September</b> so I can get a headcount for the booking.</p>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp">
+      <h2>RSVP</h2>
+      <form action="[Your Form Submission URL Here]" method="post">
+        <label for="name">Name:</label><br />
+        <select name="name" id="name">
+          <option value="" selected disabled>Select your name</option>
+          <option value="aj_howard">AJ Howard</option>
+          <option value="michele_zarate">Michele Zarate</option>
+        </select>
+        <br />
+        <br />
+
+        <label for="attend">Will you attend?</label><br />
+        <select id="attend" name="attend" required>
+          <option value="yes">Yes</option>
+          <option value="no">No</option></select
+        ><br /><br />
+
+        <label for="comments">Comments:</label><br />
+        <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br /><br />
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+    <!-- Responses Section -->
+    <section id="responses">
+      <h2>Responses</h2>
+      <table border="1" cellspacing="0" cellpadding="5">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Attendance</th>
+            <th>Comments</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Sample response; in a real-world application, these would be dynamically populated -->
+          <tr>
+            <td>John Doe</td>
+            <td>Yes</td>
+            <td>Looking forward to it!</td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>No</td>
+            <td>Sorry, I have another event on the same day.</td>
+          </tr>
+          <!-- End of Sample response -->
+        </tbody>
+      </table>
+    </section>
+  </body>
+</html>
