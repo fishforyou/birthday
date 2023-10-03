@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  max-width: 500px;
+  margin: 5rem auto;
+}
+section {
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+h1 {
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+h2 {
+  font-size: medium;
+  margin: 0 0 10px 0;
+}
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: #45a049;
+}
+table {
+  width: 100%;
+}
+img {
+  max-width: 300px;
+  margin: auto auto;
+  display: block;
+}
+#comments {
+  width: 100%;
+}
+#date {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+#time {
+  margin: 0;
+  margin-top: 5px;
+  color: gray;
+}
