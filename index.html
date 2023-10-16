@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ron's 33rd bday</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script type="text/javascript" src="https://livejs.com/live.js"></script>
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -14,36 +13,33 @@
       <h1>Ron's 33rd bday</h1>
       <img src="photo.png" alt="A picture of Ron" />
       <br />
-      <p id="date">Thu, Jun 6 – Sun, Jun 9</p>
-      <p id="time">5pm CET</p>
-      <p id="time">📍 Italy</p>
+      <p id="date">Thu, May 16 – Sun, May 19</p>
+      <p id="time">📍 Tulum, Mexico</p>
       <br />
       <p>Ciaooo!</p>
-      <p>I am turning 33 and want to see all the people I love in one place. Expect a villa hang somewhere in Italy.</p>
       <p>
-        Accomodation costs are covered, for the rest we can setup a Splitwise. Please DM me about any allergies or
-        dietary restrictions.
+        I am turning 33 and want to see all the people I love in one place as I am saying goodbye to my 20s<sup>1</sup>.
+        Plan is to all hang in a villa in downtown Tulum, eat, drink, dance, chill and party.
       </p>
-      <p>[something about +1 / extra invites]</p>
-      <p style="margin-bottom: 0">Please <b>RSVP by end of September</b> so I can get a headcount for the booking.</p>
+      <p>Accomodation costs are covered, for the rest we can setup a splitwise. Let me know if you have +1 requests.</p>
+      <p style="margin-bottom: 0">Please <b>RSVP by end of year</b> so I can confirm the headcount.</p>
+      <small>1. Math is wrong, you're in your 20s until 33.</small>
     </section>
 
     <!-- RSVP Section -->
     <section id="rsvp">
       <h2>RSVP</h2>
       <br />
-      <form action="[Your Form Submission URL Here]" method="post">
-        <select name="name" id="name" style="width: 100%; height: 2em">
+      <form action="" method="put" id="attendance-form">
+        <select required name="name" id="name" style="width: 100%; height: 2em">
           <option value="" selected disabled>Select your name</option>
-          <option value="aj_howard">AJ Howard</option>
-          <option value="michele_zarate">Michele Zarate</option>
         </select>
         <br />
         <br />
 
         <div>
           <label for="">Coming? </label>
-          <input type="radio" id="yes" name="attend" value="yes" />
+          <input required type="radio" id="yes" name="attend" value="yes" />
           <label for="yes">Yes ❤️</label>
 
           <input type="radio" id="no" name="attend" value="no" />
@@ -56,9 +52,26 @@
         <button type="submit">Submit</button>
       </form>
     </section>
-    <!-- Responses Section -->
-    <section id="responses">
-      <h2>Responses</h2>
+    <!-- Attendance Section -->
+    <section id="attendance">
+      <h2>Attendance</h2>
+      <div class="tabs">
+        <div class="tab-header">
+          <button class="tab-button active" id="tab1">Coming (<span id="coming-count">0</span>)</button>
+          <button class="tab-button" id="tab2">Absent (<span id="absent-count">0</span>)</button>
+          <button class="tab-button" id="tab3">Pending (<span id="pending-count">0</span>)</button>
+        </div>
+
+        <div class="tab-content">
+          <div class="content active" id="content1"><div class="scrollable-container" id="coming"></div></div>
+          <div id="content2" class="content"><div class="scrollable-container" id="absent"></div></div>
+          <div id="content3" class="content"><div class="scrollable-container" id="pending"></div></div>
+        </div>
+      </div>
+    </section>
+    <!-- Activity Section -->
+    <section id="activity">
+      <h2>Activity</h2>
       <table border="1" cellspacing="0" cellpadding="5">
         <thead>
           <tr>
