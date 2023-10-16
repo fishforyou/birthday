@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
   const buttons = document.querySelectorAll('.tab-button');
-
   buttons.forEach(function (button) {
     button.addEventListener('click', function (e) {
       // Remove 'active' from other buttons and contents
@@ -11,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Add 'active' to clicked button and its content
       e.target.classList.add('active');
-      document.getElementById('content' + e.target.id.replace('tab', '')).classList.add('active');
+      document.getElementById('content' + e.currentTarget.id.replace('tab', '')).classList.add('active');
     });
   });
 });
@@ -58,7 +57,11 @@ function addCount(data) {
   pendingCount.textContent = data.filter((person) => person.status === 'pending').length;
 }
 
+const loadingEls = document.querySelectorAll('.loading');
+const scrollableEls = document.querySelectorAll('.scrollable-container');
+
 function loadData() {
+  loadingEls.forEach((el) => (el.style.display = 'block'));
   fetch('https://api.jsonbin.io/v3/b/652d775212a5d376598c8628/latest?meta=false')
     .then((response) => {
       if (!response.ok) {
@@ -69,6 +72,7 @@ function loadData() {
     .then((data) => {
       sessionStorage.setItem('attendanceData', JSON.stringify(data));
       populateDropdown(data);
+      loadingEls.forEach((el) => (el.style.display = 'none'));
       populateList(
         'coming',
         data.filter((person) => person.status === 'coming')
@@ -82,6 +86,7 @@ function loadData() {
         data.filter((person) => person.status === 'pending')
       );
       addCount(data);
+      scrollableEls.forEach((el) => (el.style.display = 'flex'));
     })
     .catch((error) => {
       console.log('There has been a problem with your fetch operation: ' + error.message);
@@ -91,6 +96,8 @@ function loadData() {
 loadData();
 
 function updateAttendance(formOutput) {
+  loadingEls.forEach((el) => (el.style.display = 'block'));
+  scrollableEls.forEach((el) => (el.style.display = 'none'));
   const currentData = JSON.parse(sessionStorage.getItem('attendanceData'));
   const updatedData = currentData.map((person) => {
     if (person.firstName.toLowerCase() === formOutput.name) {
@@ -117,6 +124,5 @@ form.addEventListener('submit', function (e) {
   e.preventDefault();
   const formData = new FormData(form);
   const formOutput = Object.fromEntries(formData);
-  console.log(formOutput);
   updateAttendance(formOutput);
 });
