@@ -108,7 +108,6 @@ function populateActivity(activityData) {
 
     const avatar = document.createElement('div');
     avatar.classList.add('avatar');
-    ``;
     avatar.textContent = item.emoji;
 
     const activityText = document.createElement('div');
