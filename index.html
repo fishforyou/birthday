@@ -2,27 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ron's 33rd bday</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" href="favicon.ico" />
   </head>
   <body>
     <!-- Birthday Info Section -->
     <section id="bday-info">
       <h1>Ron's 33rd bday</h1>
-      <img src="photo.png" alt="A picture of Ron" />
-      <br />
       <p id="date">Thu, May 16 – Sun, May 19</p>
-      <p id="time">📍 Tulum, Mexico</p>
+      <p id="time">📍 Tulum (downtown), Mexico</p>
       <br />
       <p>Ciaooo!</p>
+      <p>I want to see all the people I love in one place as I am saying goodbye to my 20s<sup>1</sup>.</p>
       <p>
-        I am turning 33 and want to see all the people I love in one place as I am saying goodbye to my 20s<sup>1</sup>.
-        Plan is to all hang in a villa in downtown Tulum, eat, drink, dance, chill and party.
+        In order to make it equally inconvenient for everyone, it will be in Tulum the penultimate weekend of May! Plan
+        is to hang out, eat, drink, dance, chill and party (accomodation costs are covered).
       </p>
-      <p>Accomodation costs are covered, for the rest we can setup a splitwise. Let me know if you have +1 requests.</p>
-      <p style="margin-bottom: 0">Please <b>RSVP by end of year</b> so I can confirm the headcount.</p>
-      <small>1. Math is wrong, you're in your 20s until 33.</small>
+      <p style="margin-bottom: 0">Please <b>RSVP by end of year</b> and let me know if any questions.</p>
+      <p>Woooooo! Looking forward ❤️</p>
+      <small>1. Math is wrong, the 20s end at 33.</small>
     </section>
 
     <!-- RSVP Section -->
@@ -39,16 +40,25 @@
         <div>
           <label for="">Coming? </label>
           <input required type="radio" id="yes" name="attend" value="yes" />
-          <label for="yes">Yes ❤️</label>
+          <label for="yes">Yes 👍</label>
 
           <input type="radio" id="no" name="attend" value="no" />
-          <label for="no">No 🖕</label>
+          <label for="no">No <span style="font-size: 1.2em">🖕</span></label>
         </div>
         <br />
 
-        <textarea id="comments" name="comments" rows="3" placeholder="Comment..."></textarea><br /><br />
+        <textarea
+          id="comment"
+          name="comment"
+          rows="5"
+          placeholder="Comment..."
+          maxlength="256"
+          oninput="updateCharacterCount()"
+        ></textarea>
+        <span id="charCount">0/256</span>
+        <br /><br />
 
-        <button type="submit">Submit</button>
+        <button type="submit" id="submitButton">Send</button>
       </form>
     </section>
     <!-- Attendance Section -->
@@ -63,15 +73,12 @@
 
         <div class="tab-content">
           <div class="content active" id="content1">
-            <div class="loading">Loading...</div>
             <div class="scrollable-container" id="coming"></div>
           </div>
           <div id="content2" class="content">
-            <div class="loading">Loading...</div>
             <div class="scrollable-container" id="absent"></div>
           </div>
           <div id="content3" class="content">
-            <div class="loading">Loading...</div>
             <div class="scrollable-container" id="pending"></div>
           </div>
         </div>
@@ -80,29 +87,9 @@
     <!-- Activity Section -->
     <section id="activity">
       <h2>Activity</h2>
-      <table border="1" cellspacing="0" cellpadding="5">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Attendance</th>
-            <th>Comments</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Sample response; in a real-world application, these would be dynamically populated -->
-          <tr>
-            <td>John Doe</td>
-            <td>Yes</td>
-            <td>Looking forward to it!</td>
-          </tr>
-          <tr>
-            <td>Jane Smith</td>
-            <td>No</td>
-            <td>Sorry, I have another event on the same day.</td>
-          </tr>
-          <!-- End of Sample response -->
-        </tbody>
-      </table>
+      <div id="activity-list">
+        <div class="activity-container" id="activity-container"></div>
+      </div>
     </section>
     <script src="script.js" defer></script>
   </body>

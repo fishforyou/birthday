@@ -1,0 +1,205 @@
+[
+  {
+    "firstName": "Noelie",
+    "lastName": "Audi-Dor",
+    "fullName": "Noelie Audi-Dor",
+    "emoji": "✊🏼",
+    "status": "pending"
+  },
+  {
+    "firstName": "Josh",
+    "lastName": "Ball",
+    "fullName": "Josh Ball",
+    "emoji": "🌽",
+    "status": "pending"
+  },
+  {
+    "firstName": "Delia",
+    "lastName": "Baruch",
+    "fullName": "Delia Baruch",
+    "emoji": "🙏",
+    "status": "pending"
+  },
+  {
+    "firstName": "Michela",
+    "lastName": "Capello",
+    "fullName": "Michela Capello",
+    "emoji": "🥯",
+    "status": "pending"
+  },
+  {
+    "firstName": "Andrew",
+    "lastName": "Cohen",
+    "fullName": "Andrew Cohen",
+    "emoji": "🥂",
+    "status": "pending"
+  },
+  {
+    "firstName": "Connor",
+    "lastName": "Curfman",
+    "fullName": "Connor Curfman",
+    "emoji": "👨🏻‍🍳",
+    "status": "pending"
+  },
+  {
+    "firstName": "Bar",
+    "lastName": "Dahan",
+    "fullName": "Bar Dahan",
+    "emoji": "🏄🏻‍♂️",
+    "status": "pending"
+  },
+  {
+    "firstName": "Ronny",
+    "lastName": "De Botton",
+    "fullName": "Ronny De Botton",
+    "emoji": "🧞‍♂️",
+    "status": "pending"
+  },
+  {
+    "firstName": "Ron",
+    "lastName": "Fishman",
+    "fullName": "Ron Fishman",
+    "emoji": "🐟",
+    "status": "coming"
+  },
+  {
+    "firstName": "Spencer",
+    "lastName": "Fried",
+    "fullName": "Spencer Fried",
+    "emoji": "🧸",
+    "status": "pending"
+  },
+  {
+    "firstName": "Alice",
+    "lastName": "Gargano",
+    "fullName": "Alice Gargano",
+    "emoji": "🥾",
+    "status": "pending"
+  },
+  {
+    "firstName": "Natasha",
+    "lastName": "Gerente",
+    "fullName": "Natasha Gerente",
+    "emoji": "✌🏼",
+    "status": "pending"
+  },
+  {
+    "firstName": "Devin",
+    "lastName": "Glass",
+    "fullName": "Devin Glass",
+    "emoji": "🤦🏻‍♂️",
+    "status": "pending"
+  },
+  {
+    "firstName": "AJ",
+    "lastName": "Howard",
+    "fullName": "AJ Howard",
+    "emoji": "🍕",
+    "status": "pending"
+  },
+  {
+    "firstName": "Sasha",
+    "lastName": "Hubschman",
+    "fullName": "Sasha Hubschman",
+    "emoji": "🦄",
+    "status": "pending"
+  },
+  {
+    "firstName": "X",
+    "lastName": "Jobson",
+    "fullName": "X Jobson",
+    "emoji": "🪩",
+    "status": "pending"
+  },
+  {
+    "firstName": "Nathan",
+    "lastName": "Levy",
+    "fullName": "Nathan Levy",
+    "emoji": "🕴🏻",
+    "status": "pending"
+  },
+  {
+    "firstName": "Carolina",
+    "lastName": "Llull",
+    "fullName": "Carolina Llull",
+    "emoji": "🥕",
+    "status": "pending"
+  },
+  {
+    "firstName": "Marjory",
+    "lastName": "Marquardt",
+    "fullName": "Marjory Marquardt",
+    "emoji": "⛵️",
+    "status": "pending"
+  },
+  {
+    "firstName": "Roxane",
+    "lastName": "Montanier",
+    "fullName": "Roxane Montanier",
+    "emoji": "🏔️",
+    "status": "pending"
+  },
+  {
+    "firstName": "Cat",
+    "lastName": "Missing",
+    "fullName": "Cat Missing",
+    "emoji": "🐈",
+    "status": "absent"
+  },
+  {
+    "firstName": "Ani",
+    "lastName": "Nigolian",
+    "fullName": "Ani Nigolian",
+    "emoji": "🫀",
+    "status": "pending"
+  },
+  {
+    "firstName": "Alexander",
+    "lastName": "Petrossian",
+    "fullName": "Alexander Petrossian",
+    "emoji": "🗺️",
+    "status": "pending"
+  },
+  {
+    "firstName": "Tais",
+    "lastName": "Saieb",
+    "fullName": "Tais Saieb",
+    "emoji": "🛋️",
+    "status": "pending"
+  },
+  {
+    "firstName": "Rafael",
+    "lastName": "Soussan",
+    "fullName": "Rafael Soussan",
+    "emoji": "⚽️",
+    "status": "pending"
+  },
+  {
+    "firstName": "Jonathan",
+    "lastName": "Starkman",
+    "fullName": "Jonathan Starkman",
+    "emoji": "🏀",
+    "status": "pending"
+  },
+  {
+    "firstName": "Kelsey",
+    "lastName": "Woodworth",
+    "fullName": "Kelsey Woodworth",
+    "emoji": "🪵",
+    "status": "pending"
+  },
+  {
+    "firstName": "Raphael",
+    "lastName": "Wuarin",
+    "fullName": "Raphael Wuarin",
+    "emoji": "🦘",
+    "status": "pending"
+  },
+  {
+    "firstName": "Michele",
+    "lastName": "Zarate",
+    "fullName": "Michele Zarate",
+    "emoji": "🎬",
+    "status": "pending"
+  }
+]

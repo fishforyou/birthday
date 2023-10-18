@@ -1,0 +1,23 @@
+[
+  {
+    "attendee": "noelie",
+    "event": "message",
+    "header": "Noelie sent a message",
+    "timestamp": "2023-09-01T00:00:00Z",
+    "message": "Hello, I'm Noelie, your personal assistant. How can I help you today?"
+  },
+  {
+    "attendee": "devin",
+    "event": "message",
+    "header": "Devin sent a message",
+    "timestamp": "2023-09-015T00:00:00Z",
+    "message": "I am dumb"
+  },
+  {
+    "attendee": "ronny",
+    "event": "attendance",
+    "header": "Ronny rsvped Coming 👍",
+    "timestamp": "2023-10-04T00:00:00Z",
+    "message": "Ronny is coming!"
+  }
+]
