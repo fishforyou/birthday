@@ -63,11 +63,9 @@ function addCount(data) {
   pendingCount.textContent = data.filter((person) => person.status === 'pending').length;
 }
 
-const loadingEls = document.querySelectorAll('.loading');
 const scrollableEls = document.querySelectorAll('.scrollable-container');
 
 function loadAttendanceData() {
-  loadingEls.forEach((el) => (el.style.display = 'block'));
   fetch('https://api.jsonbin.io/v3/b/652ff37d12a5d376598d623f/latest?meta=false')
     .then((response) => {
       if (!response.ok) {
@@ -78,7 +76,6 @@ function loadAttendanceData() {
     .then((data) => {
       sessionStorage.setItem('attendanceData', JSON.stringify(data));
       populateDropdown(data);
-      loadingEls.forEach((el) => (el.style.display = 'none'));
       populateAttendance(
         'coming',
         data.filter((person) => person.status === 'coming')
@@ -111,7 +108,11 @@ function populateActivity(activityData) {
 
     const avatar = document.createElement('div');
     avatar.classList.add('avatar');
-    const attendees = JSON.parse(sessionStorage.getItem('attendanceData'));
+    let attendees = JSON.parse(sessionStorage.getItem('attendanceData'));
+    if (!attendees) {
+      loadAttendanceData();
+    }
+    attendees = JSON.parse(sessionStorage.getItem('attendanceData'));
     const attendee = attendees.find((person) => person.firstName.toLowerCase() === item.attendee);
     avatar.textContent = attendee.emoji;
 
