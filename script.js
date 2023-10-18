@@ -108,13 +108,8 @@ function populateActivity(activityData) {
 
     const avatar = document.createElement('div');
     avatar.classList.add('avatar');
-    let attendees = JSON.parse(sessionStorage.getItem('attendanceData'));
-    if (!attendees) {
-      loadAttendanceData();
-    }
-    attendees = JSON.parse(sessionStorage.getItem('attendanceData'));
-    const attendee = attendees.find((person) => person.firstName.toLowerCase() === item.attendee);
-    avatar.textContent = attendee.emoji;
+    ``;
+    avatar.textContent = item.emoji;
 
     const activityText = document.createElement('div');
     activityText.classList.add('activity-text');
@@ -191,12 +186,15 @@ async function updateAttendance(formOutput) {
 
 async function updateActivity(formOutput) {
   const currentData = JSON.parse(sessionStorage.getItem('activityData'));
+  const attendanceData = JSON.parse(sessionStorage.getItem('attendanceData'));
   const sender = formOutput.name.charAt(0).toUpperCase() + formOutput.name.slice(1);
+  const attendee = attendanceData.find((person) => person.firstName.toLowerCase() === formOutput.name);
   const rsvp = formOutput.attend === 'yes' ? 'Coming 👍' : 'Absent 🖕';
   const entryHeader = `${sender} rsvped ${rsvp}`;
   const newEntry = {
     attendee: formOutput.name,
     event: 'attendance',
+    emoji: attendee.emoji,
     header: entryHeader,
     timestamp: new Date().toISOString(),
     message: formOutput.comment,
