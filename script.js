@@ -34,6 +34,7 @@ function updateCharacterCount() {
 
 function populateAttendance(tab, data) {
   const container = document.getElementById(tab);
+  console.log(container);
   container.innerHTML = '';
 
   data.forEach((person) => {
@@ -164,7 +165,7 @@ async function updateAttendance(formOutput) {
   const currentData = JSON.parse(sessionStorage.getItem('attendanceData'));
   const updatedData = currentData.map((person) => {
     if (person.firstName.toLowerCase() === formOutput.name) {
-      person.status = formOutput.attend === 'yes' ? 'coming' : formOutput.attend === 'maybe' ? 'maybe' : 'absent';
+      person.status = formOutput.attend === 'yes' ? 'coming' : formOutput.attend === 'tbd' ? 'maybe' : 'absent';
     }
     return person;
   });
@@ -188,7 +189,7 @@ async function updateActivity(formOutput) {
   const attendanceData = JSON.parse(sessionStorage.getItem('attendanceData'));
   const sender = formOutput.name.charAt(0).toUpperCase() + formOutput.name.slice(1);
   const attendee = attendanceData.find((person) => person.firstName.toLowerCase() === formOutput.name);
-  const rsvp = formOutput.attend === 'yes' ? 'Coming 👍' : formOutput.attend === 'maybe' ? 'Maybe 🤔' : 'Absent 🖕';
+  const rsvp = formOutput.attend === 'yes' ? 'Coming 👍' : formOutput.attend === 'tbd' ? 'Maybe 🤔' : 'Absent 🖕';
   const entryHeader = `${sender} rsvped ${rsvp}`;
   const newEntry = {
     attendee: formOutput.name,
