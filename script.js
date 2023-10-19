@@ -41,6 +41,7 @@ function populateAttendance(tab, data) {
     personDiv.classList.add('person');
 
     const img = document.createElement('img');
+    img.loading = 'lazy';
     img.src = `people/${person.firstName.toLowerCase()}.png`;
     img.alt = person.name;
 
