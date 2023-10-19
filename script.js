@@ -56,11 +56,11 @@ function populateAttendance(tab, data) {
 function addCount(data) {
   const comingCount = document.getElementById('coming-count');
   const absentCount = document.getElementById('absent-count');
-  const pendingCount = document.getElementById('pending-count');
+  const maybeCount = document.getElementById('maybe-count');
 
   comingCount.textContent = data.filter((person) => person.status === 'coming').length;
   absentCount.textContent = data.filter((person) => person.status === 'absent').length;
-  pendingCount.textContent = data.filter((person) => person.status === 'pending').length;
+  maybeCount.textContent = data.filter((person) => person.status === 'maybe').length;
 }
 
 const scrollableEls = document.querySelectorAll('.scrollable-container');
@@ -85,8 +85,8 @@ function loadAttendanceData() {
         data.filter((person) => person.status === 'absent')
       );
       populateAttendance(
-        'pending',
-        data.filter((person) => person.status === 'pending')
+        'maybe',
+        data.filter((person) => person.status === 'maybe')
       );
       addCount(data);
       scrollableEls.forEach((el) => (el.style.display = 'flex'));
@@ -164,7 +164,7 @@ async function updateAttendance(formOutput) {
   const currentData = JSON.parse(sessionStorage.getItem('attendanceData'));
   const updatedData = currentData.map((person) => {
     if (person.firstName.toLowerCase() === formOutput.name) {
-      person.status = formOutput.attend === 'yes' ? 'coming' : 'absent';
+      person.status = formOutput.attend === 'yes' ? 'coming' : formOutput.attend === 'maybe' ? 'maybe' : 'absent';
     }
     return person;
   });
@@ -188,7 +188,7 @@ async function updateActivity(formOutput) {
   const attendanceData = JSON.parse(sessionStorage.getItem('attendanceData'));
   const sender = formOutput.name.charAt(0).toUpperCase() + formOutput.name.slice(1);
   const attendee = attendanceData.find((person) => person.firstName.toLowerCase() === formOutput.name);
-  const rsvp = formOutput.attend === 'yes' ? 'Coming 👍' : 'Absent 🖕';
+  const rsvp = formOutput.attend === 'yes' ? 'Coming 👍' : formOutput.attend === 'maybe' ? 'Maybe 🤔' : 'Absent 🖕';
   const entryHeader = `${sender} rsvped ${rsvp}`;
   const newEntry = {
     attendee: formOutput.name,
@@ -244,6 +244,7 @@ form.addEventListener('submit', async function (e) {
   e.preventDefault();
   const formData = new FormData(form);
   const formOutput = Object.fromEntries(formData);
+  console.log(formOutput);
   lockForm();
   try {
     await Promise.all([updateAttendance(formOutput), updateActivity(formOutput)]);

@@ -49,6 +49,9 @@
           <span>&nbsp;</span>
           <input type="radio" id="no" name="attend" value="no" />
           <label for="no">No <span style="font-size: 1.2em">🖕</span></label>
+          <span>&nbsp;</span>
+          <input type="radio" id="maybe" name="attend" value="maybe" />
+          <label for="maybe">Maybe 🤔</label>
         </div>
         <br />
 
@@ -73,7 +76,7 @@
         <div class="tab-header">
           <button class="tab-button active" id="tab1">Coming (<span id="coming-count">0</span>)</button>
           <button class="tab-button" id="tab2">Absent (<span id="absent-count">0</span>)</button>
-          <button class="tab-button" id="tab3">Pending (<span id="pending-count">0</span>)</button>
+          <button class="tab-button" id="tab3">Maybe (<span id="maybe-count">0</span>)</button>
         </div>
 
         <div class="tab-content">
@@ -84,7 +87,7 @@
             <div class="scrollable-container" id="absent"></div>
           </div>
           <div id="content3" class="content">
-            <div class="scrollable-container" id="pending"></div>
+            <div class="scrollable-container" id="maybe"></div>
           </div>
         </div>
       </div>
