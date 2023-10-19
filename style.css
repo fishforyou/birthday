@@ -51,6 +51,7 @@ select {
   border-radius: 5px;
   color: black;
   width: 100%;
+  margin: 0;
   text-indent: 2px;
   border: 1px solid rgb(118, 118, 118);
   padding-left: 5px;
@@ -96,8 +97,8 @@ button:hover {
     transform: rotate(360deg);
   }
 }
-table {
-  width: 100%;
+#attendance-form {
+  margin-top: 20px;
 }
 img {
   width: 100%;
@@ -107,6 +108,7 @@ img {
   overflow: hidden;
 }
 #comment {
+  margin: 3px 0 0 0;
   width: 100%;
   box-sizing: border-box;
   border-color: rgb(118, 118, 118);
@@ -131,6 +133,7 @@ img {
 }
 
 .tabs {
+  margin-top: 20px;
   font-family: Arial, sans-serif; /* A default font, you can change it */
   width: auto; /* Adjust as per your requirements */
 }
