@@ -34,7 +34,6 @@ function updateCharacterCount() {
 
 function populateAttendance(tab, data) {
   const container = document.getElementById(tab);
-  console.log(container);
   container.innerHTML = '';
 
   data.forEach((person) => {
@@ -245,7 +244,6 @@ form.addEventListener('submit', async function (e) {
   e.preventDefault();
   const formData = new FormData(form);
   const formOutput = Object.fromEntries(formData);
-  console.log(formOutput);
   lockForm();
   try {
     await Promise.all([updateAttendance(formOutput), updateActivity(formOutput)]);
