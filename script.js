@@ -66,7 +66,7 @@ function addCount(data) {
 
 const scrollableEls = document.querySelectorAll('.scrollable-container');
 
-function loadAttendanceData() {
+async function loadAttendanceData() {
   fetch('https://api.jsonbin.io/v3/b/652ff37d12a5d376598d623f/latest?meta=false')
     .then((response) => {
       if (!response.ok) {
@@ -142,7 +142,7 @@ function populateActivity(activityData) {
   });
 }
 
-function loadActivityData() {
+async function loadActivityData() {
   fetch('https://api.jsonbin.io/v3/b/652ff36154105e766fc3f0c7/latest?meta=false')
     .then((response) => {
       if (!response.ok) {
