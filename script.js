@@ -121,19 +121,11 @@ function populateActivity(activityData) {
     activityName.classList.add('activity-name');
     activityName.textContent = item.header;
 
-    const activityTimesince = document.createElement('p');
-    activityTimesince.classList.add('activity-timesince');
-    const timestamp = new Date(item.timestamp);
-    let daysSince = Math.floor((Date.now() - timestamp) / (1000 * 60 * 60 * 24));
-    daysSince = daysSince > 0 ? (daysSince > 1 ? `${daysSince} days ago` : `${daysSince} day ago`) : 'Today';
-    activityTimesince.textContent = daysSince;
-
     const activityBody = document.createElement('p');
     activityBody.classList.add('activity-body');
     activityBody.textContent = item.message;
 
     activityHeader.appendChild(activityName);
-    activityHeader.appendChild(activityTimesince);
     activityText.appendChild(activityHeader);
     item.message && activityText.appendChild(activityBody);
     newActivityContainer.appendChild(avatar);
