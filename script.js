@@ -67,7 +67,7 @@ function addCount(data) {
 const scrollableEls = document.querySelectorAll('.scrollable-container');
 
 async function loadAttendanceData() {
-  fetch('https://api.jsonbin.io/v3/b/652ff37d12a5d376598d623f/latest?meta=false')
+  fetch('https://api.jsonbin.io/v3/b/66cdffdaacd3cb34a87a51ba/latest?meta=false')
     .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -135,7 +135,7 @@ function populateActivity(activityData) {
 }
 
 async function loadActivityData() {
-  fetch('https://api.jsonbin.io/v3/b/652ff36154105e766fc3f0c7/latest?meta=false')
+  fetch('https://api.jsonbin.io/v3/b/66cdfff7ad19ca34f89bd697/latest?meta=false')
     .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -161,7 +161,7 @@ async function updateAttendance(formOutput) {
     }
     return person;
   });
-  await fetch('https://api.jsonbin.io/v3/b/652ff37d12a5d376598d623f', {
+  await fetch('https://api.jsonbin.io/v3/b/66cdffdaacd3cb34a87a51ba', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -192,7 +192,7 @@ async function updateActivity(formOutput) {
     message: formOutput.comment,
   };
   const updatedData = [newEntry, ...currentData];
-  await fetch('https://api.jsonbin.io/v3/b/652ff36154105e766fc3f0c7', {
+  await fetch('https://api.jsonbin.io/v3/b/66cdfff7ad19ca34f89bd697', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
